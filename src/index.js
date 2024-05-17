@@ -32,3 +32,14 @@ const generateJokes = () => __awaiter(void 0, void 0, void 0, function* () {
 // Calling generateJokes function
 btn.addEventListener('click', generateJokes);
 generateJokes();
+;
+const reportJokes = [];
+function report(score) {
+    let report = {
+        joke: jokes.innerHTML,
+        score: score,
+        date: new Date().toISOString(),
+    };
+    reportJokes.push(report);
+    console.table(reportJokes);
+}

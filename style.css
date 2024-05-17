@@ -10,7 +10,7 @@
 body {
     font-family: "Roboto Slab", serif;    
     background-image: url("img/blob.svg");
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
     font-weight: 900;
 }
@@ -27,11 +27,18 @@ body {
     font-size: large;
     font-family: "Roboto Slab", serif;
     border-radius: 50px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: chocolate;
 }
 .joke {
-    margin-top: 25px;
+    margin: 25px;
     padding: 35px;
     font-size: x-large;
     background-color: rgb(218, 218, 52);
     border-radius: 50px;
+}
+.emoti {
+    font-size: xx-large;
 }

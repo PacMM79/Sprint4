@@ -23,3 +23,17 @@ const generateJokes = async () => {
 // Calling generateJokes function
 btn.addEventListener('click', generateJokes);
 generateJokes();
+
+// Report Jokes
+interface jokeResult { joke: string; score: number; date: string };
+const reportJokes: jokeResult[] = [];
+
+  function report(score: number) :void {
+    let report: jokeResult = {
+      joke : jokes.innerHTML,
+      score: score,
+      date: new Date().toISOString(),
+    };
+    reportJokes.push(report);
+    console.table(reportJokes);
+  }
