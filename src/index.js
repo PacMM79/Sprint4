@@ -29,9 +29,32 @@ const generateJokes = () => __awaiter(void 0, void 0, void 0, function* () {
         console.log('The error is ${error}');
     }
 });
-// Calling generateJokes function
-btn.addEventListener('click', generateJokes);
-generateJokes();
+// Create generateJokes2 function
+const generateJokes2 = () => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        // Fetching Api with async await
+        const url = "https://api.chucknorris.io/jokes/random";
+        const res = yield fetch(url);
+        const data = yield res.json();
+        console.log(data);
+        jokes.innerHTML = data.value;
+    }
+    catch (error) {
+        console.log('The error is ${error}');
+    }
+});
+// Call random to Joke1 or Joke2
+const jokeCall = () => {
+    const random = Math.trunc(Math.random() * 2);
+    console.log(random);
+    if (random <= 0)
+        generateJokes();
+    else
+        generateJokes2();
+};
+// Calling jokeCall function
+btn.addEventListener('click', jokeCall);
+jokeCall();
 ;
 const reportJokes = [];
 function report(score) {

@@ -20,9 +20,33 @@ const generateJokes = async () => {
         console.log('The error is ${error}');
     }
 }
-// Calling generateJokes function
-btn.addEventListener('click', generateJokes);
-generateJokes();
+
+// Create generateJokes2 function
+const generateJokes2 = async () => {
+  try {
+      // Fetching Api with async await
+      const url = "https://api.chucknorris.io/jokes/random";
+      const res = await fetch(url);
+      const data = await res.json();
+      console.log(data);
+      jokes.innerHTML = data.value;
+  }
+  catch (error) {
+      console.log('The error is ${error}');
+  }
+}
+
+// Call random to Joke1 or Joke2
+const jokeCall = () => {
+  const random : number = Math.trunc(Math.random() * 2);
+  console.log(random);
+  if (random <= 0) generateJokes();
+  else generateJokes2();
+};
+
+// Calling jokeCall function
+btn.addEventListener('click', jokeCall);
+jokeCall();
 
 // Report Jokes
 interface jokeResult { joke: string; score: number; date: string };
