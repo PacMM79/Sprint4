@@ -42,6 +42,7 @@ const jokeCall = () => {
   console.log(random);
   if (random <= 0) generateJokes();
   else generateJokes2();
+  backgroundChange();
 };
 
 // Calling jokeCall function
@@ -85,3 +86,21 @@ const weather = async () => {
   }
 };
 weather();
+
+function backgroundChange(): void {
+  const backPic: string[] = [
+    "img/blob.svg",
+    "img/blob1.svg",
+    "img/blob2.svg",
+    "img/blob3.svg",
+    "img/blob4.svg",
+    "img/blob5.svg",
+  ];
+
+  const randomOrder: number = Math.floor(
+    Math.random() * backPic.length
+  );
+  const selectedPic: string = backPic[randomOrder];
+
+  document.body.style.backgroundImage = `url(${selectedPic})`;
+}

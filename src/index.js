@@ -51,6 +51,7 @@ const jokeCall = () => {
         generateJokes();
     else
         generateJokes2();
+    backgroundChange();
 };
 // Calling jokeCall function
 btn.addEventListener('click', jokeCall);
@@ -86,3 +87,16 @@ const weather = () => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 weather();
+function backgroundChange() {
+    const backPic = [
+        "img/blob.svg",
+        "img/blob1.svg",
+        "img/blob2.svg",
+        "img/blob3.svg",
+        "img/blob4.svg",
+        "img/blob5.svg",
+    ];
+    const randomOrder = Math.floor(Math.random() * backPic.length);
+    const selectedPic = backPic[randomOrder];
+    document.body.style.backgroundImage = `url(${selectedPic})`;
+}
