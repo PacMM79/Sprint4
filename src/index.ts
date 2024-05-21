@@ -37,3 +37,27 @@ const reportJokes: jokeResult[] = [];
     reportJokes.push(report);
     console.table(reportJokes);
   }
+
+// Weather API
+let tempResp: string;
+
+const weather = async () => {
+  try {
+    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=41.389&lon=2.159&units=metric&appid=e7704bc895b4a8d2dfd4a29d404285b6');
+    const data = await response.json();
+    const tempResp = data.main.temp;
+    const ico = data.weather[0].icon;
+
+    document.getElementById('tempResp')!.innerHTML = tempResp.toFixed(1) + 'º' +'C';
+
+    const icoURL = `http://openweathermap.org/img/w/${ico}.png`;
+    const icoElement = document.createElement('img');
+    icoElement.src = icoURL;
+    document.getElementById('icoWeather')!.appendChild(icoElement);
+
+    console.log(data);
+  } catch (error) {
+    console.log("Error calling API:", error);
+  }
+};
+weather();
