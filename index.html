@@ -3,25 +3,29 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Jokes API</title>
-        <meta name="description" content="">
+        <title>Jokes API- Sprint 4</title>
+        <meta name="description" content="Sprint 4 - Jokes API">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <header>
         <div id="weather" class="weather">
-            <div class="icoWeather" id="icoWeather" alt="Icona del temps"></div> 
-            <span class="tempResp" id="tempResp"></span>
+            <div class="icoWeather" id="icoWeather"></div>
+            <p class="w-city">Barcelona</p> 
+            <span class="tempResp" id="tempResp"> </span>
         </div>
+        </header>
         <div class="container">
             <div class="box">
                 <h1>Preparat per riure? &#128517;</h1>
                 <button class="btn" id="btn">Següent acudit</button>
                 <div class="joke">Carregant acudits...</div>
                 <div class="score">
-                    <button class="btn" onclick="report(1)"><span class="emoti">&#128534</span></button>
-                    <button class="btn" onclick="report(2)"><span class="emoti">&#128527</span></button>
-                    <button class="btn" onclick="report(3)"><span class="emoti">&#128541</span></button>
+                    <button class="btn" id="btn1" onclick="report(1)"><span class="emoti">&#128534;</span></button>
+                    <button class="btn" id="btn2" onclick="report(2)"><span class="emoti">&#128527;</span></button>
+                    <button class="btn" id="btn3" onclick="report(3)"><span class="emoti">&#128541;</span></button>
+                    </div><p class="vote" id="voteRes"></p></div>
                 </div>
             </div>
         </div>
