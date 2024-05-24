@@ -1,28 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
-
 .roboto-slab-> {
     font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
     font-weight: 900;
     font-style: normal;
-  }
-
+}
 body {
     font-family: "Roboto Slab", serif;
     background-size: 100%;
     background-repeat: no-repeat;
-    font-weight: 900;
+    margin: 0 auto;
 }
 h1 {
     font-size: 2rem;
+    animation: moveT 1s ease-in;
 }
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
     text-align: center;
-    padding: 10%;
-    width: 80%;
+    padding-top: 2%;
 }
 .btn {
     padding: 15px;
@@ -30,30 +27,67 @@ h1 {
     font-family: "Roboto Slab", serif;
     border-radius: 50px;
     cursor: pointer;
+    opacity: 90%;
 }
 .btn:hover {
-    background-color: chocolate;
+    background-color: chocolate !important;
 }
 .joke {
     margin: 25px;
     padding: 35px;
-    font-size: x-large;
-    background-color: rgb(218, 218, 52);
+    font-size: 3vw;
+    background-color: rgb(218 218 52 / 90%);
     border-radius: 50px;
     border: 2px solid black;
+    word-break: break-word;
 }
 .emoti {
     font-size: xx-large;
 }
+.vote {
+    text-align: center;
+}
 .weather {
     width: 50px;
-    padding: 3px 15px;
+    padding: 0px 20px;
+    margin: 1% 0 0 1%;
     background-color: rgb(14, 114, 196);
     border: 2px solid black;
     border-radius: 50px;
     color: beige;
+    font-weight: 900;
+    font-size: 14px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: moveW 2s ease-in;
 }
 .tempResp {
     top: -15px;
     position: relative;
+    margin-left: 3px;
+}
+.w-city {
+    margin-top: -17px;
+}
+@keyframes moveW {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }  
+    100% {
+        opacity: 1;
+        translate: (0);
+    }
+}
+@keyframes moveT {
+    0% {
+        opacity: 0;
+        transform: translateX(150px);
+    }  
+    100% {
+        opacity: 1;
+        translate: (0);
+    }
 }
