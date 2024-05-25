@@ -121,8 +121,10 @@ const weather = async () => {
     const data = await response.json();
     const tempResp = data.main.temp;
     const ico = data.weather[0].icon;
+    const city = data.name;
 
     document.getElementById('tempResp')!.innerHTML = tempResp.toFixed(1) + 'º' + 'C';
+    document.getElementById('city')!.innerHTML = city;
     const icoURL = `http://openweathermap.org/img/w/${ico}.png`;
     const icoElement = document.createElement('img');
     icoElement.src = icoURL;
